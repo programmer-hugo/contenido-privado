@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contenido Bloqueado</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f2f5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 {
+      color: #1877f2;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      color: #1c1e21;
+      margin-bottom: 1rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    input {
+      margin-bottom: 1rem;
+      padding: 0.5rem;
+      border: 1px solid #dddfe2;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #1877f2;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #166fe5;
+    }
+    #error-message {
+      color: #ff3b30;
+      text-align: center;
+      margin-top: 1rem;
+    }
+    #locked-content {
+      text-align: center;
+    }
+    #logout {
+      background-color: #42b72a;
+      margin-top: 1rem;
+    }
+    #logout:hover {
+      background-color: #36a420;
+    }
+  </style>
+</head>
+<body>
+  <!-- Formulario de Inicio de Sesión -->
+  <div id="login-form">
+    <h1>Acceso a Contenido</h1>
+    <h2>Inicia sesión</h2>
+    <h3>admin@gmail.com</h3>
+    <h3>Admin@1</h3>
+    <form id="form-login">
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+      <input type="password" id="password" placeholder="Contraseña" required />
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    <p id="error-message" style="color: red;"></p>
+  </div>
+
+  <!-- Contenido bloqueado -->
+  <div id="locked-content" style="display: none;">
+    <h1>Contenido Exclusivo</h1>
+    <iframe width="100%" height="100%" src="https://hacker-tools-gto.github.io/001"></iframe>
+    <button id="logout">Cerrar sesión</button>
+  </div>
+
+  <script type="module">
+    // Importa Firebase
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+
+    // Configuración de Firebase
+    const firebaseConfig = {
+      apiKey: "AIzaSyAGCRciTRz3aynKPve372cFtxe5E9qsATI",
+      authDomain: "dvsdhfvw.firebaseapp.com",
+      projectId: "dvsdhfvw",
+      storageBucket: "dvsdhfvw.firebasestorage.app",
+      messagingSenderId: "64899487218",
+      appId: "1:64899487218:web:7b6bcfab32b5d4a6d1076b",
+      measurementId: "G-H1CBF88HE6"
+    };
+
+    // Inicializa Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    // Referencias a elementos HTML
+    const loginForm = document.getElementById("form-login");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const errorMessage = document.getElementById("error-message");
+    const lockedContent = document.getElementById("locked-content");
+    const loginFormDiv = document.getElementById("login-form");
+    const logoutButton = document.getElementById("logout");
+
+    // Maneja el formulario de inicio de sesión
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = emailInput.value;
+      const password = passwordInput.value;
+
+      signInWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          errorMessage.textContent = ""; // Limpia mensajes de error
+        })
+        .catch((error) => {
+          errorMessage.textContent = "Error: " + error.message;
+        });
+    });
+
+    // Detecta cambios en el estado de autenticación
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        // Usuario autenticado
+        loginFormDiv.style.display = "none";
+        lockedContent.style.display = "block";
+      } else {
+        // Usuario no autenticado
+        loginFormDiv.style.display = "block";
+        lockedContent.style.display = "none";
+      }
+    });
+
+    // Maneja el cierre de sesión
+    logoutButton.addEventListener("click", () => {
+      signOut(auth);
+    });
+  </script>
+</body>
+</html>
