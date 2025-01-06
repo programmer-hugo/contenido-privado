@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-mx">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contenido Bloqueado</title>
+  <title>Solo Personas Autorizadas</title>
+  <link rel="icon" href="Security.ico" type="image/x-icon">
   <style>
     body {
       font-family: 'Arial', sans-serif;
@@ -15,6 +16,152 @@
       align-items: center;
       min-height: 100vh;
     }
+        .nav-links {
+            list-style: none;
+            display: flex; /* Alinear horizontalmente en pantallas grandes */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: gray;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 1rem;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+        }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .imagen-item {
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .imagen-item iframe {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+    .imagen-item h2 {
+      font-size: 1.2rem;
+      margin: 10px 15px;
+      color: #333;
+    }
+
+    .imagen-item p {
+      font-size: 0.9rem;
+      margin: 0 15px 15px;
+      color: #666;
+    }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+        h1 {
+            margin-bottom: 0;
+            display: auto;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .container2 {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .subtitle {
+            font-style: italic;
+            margin-top: 0;
+        }
+        .subtitle a {
+            font-style: italic;
+            margin-top: 0;
+            text-decoration: underline;
+            color: black;
+        }
+        .logo {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+    h2 {
+      color: rgb(30, 30, 30);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    h3 {
+      color: rgb(30, 30, 30);
+      margin-bottom: 1rem;
+    }
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    #locked-content {
+      width: 1000px;
+      align-content: justify;
+      text-align: center;
+    }
+    .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px; /* Espacio entre el logo y el texto */
+    }
+    .logo-image {
+        width: 20px;
+        height: 20px;
+        border-radius: 12.5%;
+    }
+        header {
+            background-color: white;
+            color: black;
+            text-align: left;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        .piojo {
+            height: 4cm;
+            background: rgba(0, 0, 0, 0);
+        }
+  /*Agregado*/
     .container {
       background-color: white;
       padding: 2rem;
@@ -22,15 +169,6 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       width: 100%;
       max-width: 400px;
-    }
-    h1 {
-      color: #1877f2;
-      text-align: center;
-      margin-bottom: 1.5rem;
-    }
-    h2 {
-      color: #1c1e21;
-      margin-bottom: 1rem;
     }
     form {
       display: flex;
@@ -42,6 +180,31 @@
       border: 1px solid #dddfe2;
       border-radius: 6px;
       font-size: 1rem;
+    }
+    .password-container {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .password-container input {
+      flex: 1;
+      margin-right: 0;
+    }
+    .toggle-password {
+      position: absolute;
+      right: 1px;
+      bottom: 16px;
+      background: none;
+      border: none;
+      font-size: 0.9rem;
+      color: black;
+      cursor: pointer;
+      /*Left*/
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      /*Right*/
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
     }
     button {
       background-color: #1877f2;
@@ -55,107 +218,177 @@
     }
     button:hover {
       background-color: #166fe5;
+      color: white;
     }
     #error-message {
       color: #ff3b30;
       text-align: center;
       margin-top: 1rem;
     }
-    #locked-content {
-      text-align: center;
+    .floating-button {
+      position: fixed;
+      bottom: 20px; /* Distancia desde la parte inferior */
+      right: 20px; /* Distancia desde la derecha */
+      background-color:rgb(183, 42, 42);
+      color: white;
+      border: none;
+      border-radius: 12.5%;
+      width: auto;
+      height: 60px;
+      font-size: 1.5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
     }
-    #logout {
-      background-color: #42b72a;
-      margin-top: 1rem;
+    .floating-button:hover {
+      background-color:rgb(164, 32, 32);
     }
-    #logout:hover {
-      background-color: #36a420;
+    @media screen and (max-width: 1038px) {
+        #locked-content {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 768px) {
+        .floating-button {
+            position: relative;
+        }
+        .logout {
+            display: flex;
+            justify-content: center;
+            margin-top: 3rem;
+        }
     }
   </style>
 </head>
 <body>
-  <!-- Formulario de Inicio de Sesión -->
-  <div id="login-form">
-    <h1>Acceso a Contenido</h1>
-    <h2>Inicia sesión</h2>
-    <h3>admin@gmail.com</h3>
-    <h3>Admin@1</h3>
-    <form id="form-login">
-      <input type="email" id="email" placeholder="Correo electrónico" required />
-      <input type="password" id="password" placeholder="Contraseña" required />
-      <button type="submit">Iniciar Sesión</button>
-    </form>
-    <p id="error-message" style="color: red;"></p>
-  </div>
+  <header>
+      <nav class="container2">
+          <div class="logo">
+            <h1>Security</h1>
+            <p class="subtitle">By <a href="https://programmer-hugo.github.io/hugo-elias.programador-web/inicio/">Programmer Hugo</a></p>
+          </div>
+          <ul class="nav-links">
+            <li>
+              <img src="Security.png" width="75px" height="75px">
+            </li>
+          </ul>
+      </nav>
+  </header>
+  <main>
 
-  <!-- Contenido bloqueado -->
-  <div id="locked-content" style="display: none;">
-    <h1>Contenido Exclusivo</h1>
-    <iframe width="100%" height="100%" src="https://hacker-tools-gto.github.io/001"></iframe>
-    <button id="logout">Cerrar sesión</button>
-  </div>
+    <section class="piojo"></section>
 
-  <script type="module">
-    // Importa Firebase
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-    import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+    <!-- Formulario de Inicio de Sesión -->
+    <div id="login-form" class="container">
+      <h2>Acceso a Contenido</h2>
+      <h3>Inicia sesión</h3>
+      <form id="form-login">
+        <input type="email" id="email" placeholder="Correo electrónico" required />
+        <div class="password-container">
+          <input type="password" id="password" placeholder="Contraseña" required />
+          <button type="button" class="toggle-password" id="toggle-password" style="height: 35px;">Mostrar</button>
+        </div>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <p id="error-message" style="color: red;"></p>
+    </div>
 
-    // Configuración de Firebase
-    const firebaseConfig = {
-      apiKey: "AIzaSyAGCRciTRz3aynKPve372cFtxe5E9qsATI",
-      authDomain: "dvsdhfvw.firebaseapp.com",
-      projectId: "dvsdhfvw",
-      storageBucket: "dvsdhfvw.firebasestorage.app",
-      messagingSenderId: "64899487218",
-      appId: "1:64899487218:web:7b6bcfab32b5d4a6d1076b",
-      measurementId: "G-H1CBF88HE6"
-    };
+    <!-- Contenido bloqueado -->
+    <div id="locked-content" style="display: none;">
+      <h2>Proyectos en proceso (Vista Previa)</h2>
+      <div class="galeria">
+          <div class="imagen-item">
+              <iframe src="https://asl-shop.github.io/inicio/version-de-prueba/"></iframe>
+              <h3>ASL Shop</h3>
+              <p>Creando con HTML, CSS, JS.</p>
+          </div>
+          <div class="imagen-item">
+              <iframe src="https://abogados-elias-y-pena.github.io/inicio/"></iframe>
+              <h3>Elias & Peña | Abogados</h3>
+              <p>Editando con HTML, CSS, JS.</p>
+          </div>
+      </div>
+      <section class="logout">
+          <button class="floating-button" id="logout">Cerrar sesión</button>
+      </section>
+    </div>
 
-    // Inicializa Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
+    <script type="module">
+      // Importa Firebase
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+      import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
-    // Referencias a elementos HTML
-    const loginForm = document.getElementById("form-login");
-    const emailInput = document.getElementById("email");
-    const passwordInput = document.getElementById("password");
-    const errorMessage = document.getElementById("error-message");
-    const lockedContent = document.getElementById("locked-content");
-    const loginFormDiv = document.getElementById("login-form");
-    const logoutButton = document.getElementById("logout");
+      // Configuración de Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyAGCRciTRz3aynKPve372cFtxe5E9qsATI",
+        authDomain: "dvsdhfvw.firebaseapp.com",
+        projectId: "dvsdhfvw",
+        storageBucket: "dvsdhfvw.firebasestorage.app",
+        messagingSenderId: "64899487218",
+        appId: "1:64899487218:web:7b6bcfab32b5d4a6d1076b",
+        measurementId: "G-H1CBF88HE6"
+      };
 
-    // Maneja el formulario de inicio de sesión
-    loginForm.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const email = emailInput.value;
-      const password = passwordInput.value;
+      // Inicializa Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
 
-      signInWithEmailAndPassword(auth, email, password)
-        .then(() => {
-          errorMessage.textContent = ""; // Limpia mensajes de error
-        })
-        .catch((error) => {
-          errorMessage.textContent = "Error: " + error.message;
-        });
-    });
+      // Referencias a elementos HTML
+      const loginForm = document.getElementById("form-login");
+      const emailInput = document.getElementById("email");
+      const passwordInput = document.getElementById("password");
+      const togglePasswordButton = document.getElementById("toggle-password");
+      const errorMessage = document.getElementById("error-message");
+      const lockedContent = document.getElementById("locked-content");
+      const loginFormDiv = document.getElementById("login-form");
+      const logoutButton = document.getElementById("logout");
 
-    // Detecta cambios en el estado de autenticación
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // Usuario autenticado
-        loginFormDiv.style.display = "none";
-        lockedContent.style.display = "block";
-      } else {
-        // Usuario no autenticado
-        loginFormDiv.style.display = "block";
-        lockedContent.style.display = "none";
-      }
-    });
+      // Alternar visibilidad de contraseña
+      togglePasswordButton.addEventListener("click", () => {
+        if (passwordInput.type === "password") {
+          passwordInput.type = "text";
+          togglePasswordButton.textContent = "Ocultar";
+        } else {
+          passwordInput.type = "password";
+          togglePasswordButton.textContent = "Mostrar";
+        }
+      });
 
-    // Maneja el cierre de sesión
-    logoutButton.addEventListener("click", () => {
-      signOut(auth);
-    });
-  </script>
+      // Maneja el formulario de inicio de sesión
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = emailInput.value;
+        const password = passwordInput.value;
+
+        signInWithEmailAndPassword(auth, email, password)
+          .then(() => {
+            errorMessage.textContent = ""; // Limpia mensajes de error
+          })
+          .catch((error) => {
+            errorMessage.textContent = "Error: " + error.message;
+          });
+      });
+
+  // Detecta cambios en el estado de autenticación
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // Usuario autenticado
+          loginFormDiv.style.display = "none";
+          lockedContent.style.display = "block";
+        } else {
+          // Usuario no autenticado
+          loginFormDiv.style.display = "block";
+          lockedContent.style.display = "none";
+        }
+      });
+
+      // Maneja el cierre de sesión
+      logoutButton.addEventListener("click", () => {
+        signOut(auth);
+      });
+    </script>
+  </main>
 </body>
 </html>
