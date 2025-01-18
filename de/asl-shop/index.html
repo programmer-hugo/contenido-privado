@@ -121,6 +121,11 @@
             height: 420px;
             border-color:rgba(0, 0, 0, 0);
         }
+        button {
+            background-color:rgba(0, 0, 0, 0);
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -150,7 +155,7 @@
                     </svg>
                 </button>
             </div>
-            <div class="url-bar">https://asl-shop.github.io/inicio/</div>
+            <div class="url-bar" id="url"></div>
             <div class="return">
                 <a href="https://programmer-hugo.github.io/vista-previa/">Regresar a Security</a>
             </div>
@@ -161,6 +166,15 @@
     <script>
         function recargarIframe() {
             document.getElementById("asl").src += "";
+        }
+    </script>
+    <script>
+        function mostrarURL() {
+            let iframe = document.getElementById("asl");
+            let urlDiv = document.getElementById("url");
+
+            // Mostrar la URL actual del iframe
+            urlDiv.textContent = iframe.src;
         }
     </script>
     </div>
