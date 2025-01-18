@@ -51,7 +51,7 @@
             display: flex;
             margin-right: 8px;
         }
-        .actions svg {
+        .svg {
             margin-left: 5px;
             fill: #9e9e9e;
         }
@@ -101,7 +101,7 @@
             text-decoration: none;
         }
         .content {
-            padding: 20px;
+            margin-left: 0;
             height: 420px;
             overflow-y: auto;
         }
@@ -121,6 +121,11 @@
             height: 420px;
             border-color:rgba(0, 0, 0, 0);
         }
+        button {
+            background-color:rgba(0, 0, 0, 0);
+            border: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -136,22 +141,39 @@
         </div>
         <div class="address-bar">
             <div class="actions">
-                <svg viewBox="0 0 256 512" width="15px" title="angle-left">
+                <svg class="svg" viewBox="0 0 256 512" width="15px" title="angle-left">
   <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
 </svg>
-                <svg viewBox="0 0 256 512" width="15px" title="angle-right">
+                <svg class="svg" viewBox="0 0 256 512" width="15px" title="angle-right">
   <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
-</svg>
-                <svg viewBox="0 0 512 512" width="17.5px" title="redo">
-  <path d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z" />
-</svg>
+</svg> 
+                <button onclick="recargarIframe()">
+                    <svg viewBox="0 0 512 512" width="17.5px" title="redo">
+                        <path d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z" />
+                    </svg>
+                </button>
             </div>
-            <div class="url-bar">https://abogados-elias-y-pena.github.io/inicio/</div>
+            <div class="url-bar" id="url"></div>
             <div class="return">
                 <a href="https://programmer-hugo.github.io/vista-previa/">Regresar a Security</a>
             </div>
         </div>
-        <iframe class="content" src="https://abogados-elias-y-pena.github.io/inicio/"></iframe>
+        <iframe id="epa" class="content" src="https://abogados-elias-y-pena.github.io/inicio/"></iframe>
+           
+        <script>
+            function recargarIframe() {
+                let iframe = document.getElementById("asl");
+                iframe.src = iframe.src;
+            }
+    
+            function mostrarURL() {
+                let iframe = document.getElementById("asl");
+                let urlDiv = document.getElementById("url");
+                urlDiv.textContent = iframe.src;
+            }
+    
+            window.onload = mostrarURL;
+        </script>
     </div>
 </body>
 </html>
