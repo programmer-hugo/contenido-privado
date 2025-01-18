@@ -143,17 +143,26 @@
 </svg>
                 <svg viewBox="0 0 256 512" width="15px" title="angle-right">
   <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
-</svg>
-                <svg viewBox="0 0 512 512" width="17.5px" title="redo">
-  <path d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z" />
-</svg>
+</svg> 
+                <button onclick="recargarIframe()">
+                    <svg viewBox="0 0 512 512" width="17.5px" title="redo">
+                        <path d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z" />
+                    </svg>
+                </button>
             </div>
             <div class="url-bar">https://asl-shop.github.io/inicio/</div>
             <div class="return">
                 <a href="https://programmer-hugo.github.io/vista-previa/">Regresar a Security</a>
             </div>
         </div>
-        <iframe class="content" src="https://asl-shop.github.io/inicio/version-de-prueba/"></iframe>
+        <iframe id="asl" class="content" src="https://asl-shop.github.io/inicio/version-de-prueba/"></iframe>
+           
+
+    <script>
+        function recargarIframe() {
+            document.getElementById("asl").src += "";
+        }
+    </script>
     </div>
 </body>
 </html>
