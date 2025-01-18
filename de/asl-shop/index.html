@@ -162,21 +162,20 @@
         </div>
         <iframe id="asl" class="content" src="https://asl-shop.github.io/inicio/version-de-prueba/"></iframe>
            
-
-    <script>
-        function recargarIframe() {
-            document.getElementById("asl").src += "";
-        }
-    </script>
-    <script>
-        function mostrarURL() {
-            let iframe = document.getElementById("asl");
-            let urlDiv = document.getElementById("url");
-
-            // Mostrar la URL actual del iframe
-            urlDiv.textContent = iframe.src;
-        }
-    </script>
+        <script>
+            function recargarIframe() {
+                let iframe = document.getElementById("asl");
+                iframe.src = iframe.src;
+            }
+    
+            function mostrarURL() {
+                let iframe = document.getElementById("asl");
+                let urlDiv = document.getElementById("url");
+                urlDiv.textContent = iframe.src;
+            }
+    
+            window.onload = mostrarURL;
+        </script>
     </div>
 </body>
 </html>
