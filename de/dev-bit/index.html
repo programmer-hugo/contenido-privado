@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Previa de "DevBit"</title>
+    <link rel="icon" href="Security.ico" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f3f4;
+        }
+        .browser {
+            width: 100%;
+            max-width: 1000px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .tabs {
+            display: flex;
+            background-color: #dee1e6;
+            padding: 8px 8px 0;
+            height: 30px;
+        }
+        .tab {
+            background-color: #f2f3f5;
+            border-radius: 8px 8px 0 0;
+            padding: 8px 20px;
+            margin-right: 4px;
+            font-size: 14px;
+            color: #5f6368;
+            cursor: pointer;
+        }
+        .tab.active {
+            background-color: #fff;
+            color: #202124;
+        }
+        .address-bar {
+            display: flex;
+            align-items: center;
+            background-color: #f1f3f4;
+            padding: 8px;
+            border-bottom: 1px solid #dadce0;
+        }
+        .actions {
+            display: flex;
+            margin-right: 8px;
+        }
+        .svg {
+            margin-left: 5px;
+            fill: #9e9e9e;
+        }
+        .action1 {
+            width: 20px;
+            height: 20px;
+            background-color: #ff5f56;
+            border-radius: 50%;
+            margin-top: 2px;
+            margin-right: 8px;
+        }
+        .action2 {
+            width: 20px;
+            height: 20px;
+            background-color: #ffbd2e;
+            border-radius: 50%;
+            margin-top: 2px;
+            margin-right: 8px;
+        }
+        .action3 {
+            width: 20px;
+            height: 20px;
+            background-color: #27c93f;
+            border-radius: 50%;
+            margin-top: 2px;
+            margin-right: 8px;
+        }
+        .url-bar {
+            flex-grow: 1;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #202124;
+            border: 1px solid #dadce0;
+        }
+        .return {
+            background-color: #ffd700;
+            border-radius: 5px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #202124;
+            margin-left: 5px;
+        }
+        .return a {
+            color: black;
+            text-decoration: none;
+        }
+        .content {
+            margin-left: 0;
+            height: 420px;
+            overflow-y: auto;
+        }
+        .tab-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px; /* Espacio entre el logo y el texto */
+        }
+        .logo-image {
+            width: 20px;
+            height: 20px;
+            border-radius: 12.5%;
+        }
+        iframe {
+            width: 100%;
+            height: 420px;
+            border-color:rgba(0, 0, 0, 0);
+        }
+        button {
+            background-color:rgba(0, 0, 0, 0);
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>2
+<body>
+    <div class="browser">
+        <div class="tabs">
+            <div class="actions">
+                <div class="action1"></div>
+                <div class="action2"></div>
+                <div class="action3"></div>
+            </div>
+            <div class="tab active tab-content">
+                <img src="https://dev-bit-oficial.github.io/programadores-web/inicio/logo.png" alt="LOGO" class="logo-image">
+                <p>DevBit</p>
+            </div>
+        </div>
+        <div class="address-bar">
+            <div class="actions">
+                <svg class="svg" viewBox="0 0 256 512" width="15px" title="angle-left">
+  <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+</svg>
+                <svg class="svg" viewBox="0 0 256 512" width="15px" title="angle-right">
+  <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+</svg> 
+                <button onclick="recargarIframe()">
+                    <svg viewBox="0 0 512 512" width="17.5px" title="redo">
+                        <path d="M500.33 0h-47.41a12 12 0 0 0-12 12.57l4 82.76A247.42 247.42 0 0 0 256 8C119.34 8 7.9 119.53 8 256.19 8.1 393.07 119.1 504 256 504a247.1 247.1 0 0 0 166.18-63.91 12 12 0 0 0 .48-17.43l-34-34a12 12 0 0 0-16.38-.55A176 176 0 1 1 402.1 157.8l-101.53-4.87a12 12 0 0 0-12.57 12v47.41a12 12 0 0 0 12 12h200.33a12 12 0 0 0 12-12V12a12 12 0 0 0-12-12z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="url-bar" id="url"></div>
+            <div class="return">
+                <a href="https://programmer-hugo.github.io/vista-previa/">Regresar a Security</a>
+            </div>
+        </div>
+        <iframe id="asl" class="content" src="https://dev-bit-oficial.github.io/inicio/version-de-prueba/"></iframe>
+           
+        <script>
+            function recargarIframe() {
+                let iframe = document.getElementById("asl");
+                iframe.src = iframe.src;
+            }
+    
+            function mostrarURL() {
+                let iframe = document.getElementById("asl");
+                let urlDiv = document.getElementById("url");
+                urlDiv.textContent = iframe.src;
+            }
+    
+            window.onload = mostrarURL;
+        </script>
+    </div>
+</body>
+</html>
