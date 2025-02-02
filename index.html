@@ -16,154 +16,6 @@
       align-items: center;
       min-height: 100vh;
     }
-        .nav-links {
-            list-style: none;
-            display: flex; /* Alinear horizontalmente en pantallas grandes */
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin-left: 1.5rem;
-        }
-
-        .nav-links a {
-            color: black;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: gray;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul li {
-            display: inline;
-            margin-right: 1rem;
-        }
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-    .galeria {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-    }
-    .imagen-item {
-      background-color: #fff;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      height: 200px;
-    }
-    .imagen-item h2 {
-      font-size: 1.2rem;
-      margin: 10px 15px;
-      color: #333;
-    }
-    .imagen-item h3 span {
-      font-size: 0.8rem;
-      color: #fff;
-      background-color: #0023eb;
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
-    .imagen-item p {
-      font-size: 0.9rem;
-      margin: 0 15px 15px;
-      color: #666;
-    }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1re8m 2rem;
-        }
-        h1 {
-            margin-bottom: 0;
-            display: auto;
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-        ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        .container2 {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .subtitle {
-            font-style: italic;
-            margin-top: 0;
-        }
-        .subtitle a {
-            font-style: italic;
-            margin-top: 0;
-            text-decoration: underline;
-            color: black;
-        }
-        .logo {
-            color: black;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-    h2 {
-      color: rgb(30, 30, 30);
-      text-align: center;
-      margin-bottom: 1.85rem;
-    }
-    h3 {
-      color: rgb(30, 30, 30);
-      margin-bottom: 1rem;
-    }
-    ul {
-        list-style-type: none;
-        padding-left: 0;
-    }
-    li {
-        margin-bottom: 10px;
-    }
-    #locked-content {
-      width: 1000px;
-      align-content: justify;
-      text-align: center;
-    }
-    .footer-content {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 5px; /* Espacio entre el logo y el texto */
-    }
-    .logo-image {
-        width: 20px;
-        height: 20px;
-        border-radius: 12.5%;
-    }
-        header {
-            background-color: white;
-            color: black;
-            text-align: left;
-            padding: 1rem 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-        .piojo {
-            height: 4cm;
-            background: rgba(0, 0, 0, 0);
-        }
-  /*Agregado*/
     .container {
       background-color: white;
       padding: 2rem;
@@ -183,31 +35,6 @@
       border-radius: 6px;
       font-size: 1rem;
     }
-    .password-container {
-      position: relative;
-      display: flex;
-      align-items: cen8ter;
-    }
-    .password-container input {
-      flex: 1;
-      margin-right: 0;
-    }
-    .toggle-password {
-      position: absolute;
-      right: 1px;
-      bottom: 16px;
-      background: none;
-      border: none;
-      font-size: 0.9rem;
-      color: black;
-      cursor: pointer;
-      /*Left*/
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-      /*Right*/
-      border-top-right-radius: 5px;
-      border-bottom-right-radius: 5px;
-    }
     button {
       background-color: #1877f2;
       color: white;
@@ -220,195 +47,111 @@
     }
     button:hover {
       background-color: #166fe5;
-      color: white;
     }
     #error-message {
       color: #ff3b30;
       text-align: center;
       margin-top: 1rem;
     }
-    .floating-button {
-      position: fixed;
-      bottom: 20px; /* Distancia desde la parte inferior */
-      right: 20px; /* Distancia desde la derecha */
-      background-color:rgb(183, 42, 42);
-      color: white;
-      border: none;
-      border-radius: 12.5%;
-      width: auto;
-      height: 60px;
-      font-size: 1.5rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
-    }
-    .floating-button:hover {
-      background-color:rgb(164, 32, 32);
-    }
-    .view {
-      display: inline-block;
-      background-color: #ffd700;
-      color: #1a1a1a;
-      padding: 0.8rem 1.5rem;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .view:hover {
-      background-color: #e6c200;
-    }
-    @media screen and (max-width: 1038px) {
-        #locked-content {
-            width: 100%;
-        }
-    }
-    @media screen and (max-width: 768px) {
-        .floating-button {
-            position: relative;
-        }
-        .logout {
-            display: flex;
-            justify-content: center;
-            margin-top: 3rem;
-        }
-    }
   </style>
 </head>
 <body>
-  <header>
-      <nav class="container2">
-          <div class="logo">
-            <h1>Security</h1>
-            <p class="subtitle">By <a href="https://programmer-hugo.github.io/hugo-elias.programador-web/inicio/">Programmer Hugo</a></p>
-          </div>
-          <ul class="nav-links">
-            <li>
-              <img src="Security.png" width="75px" height="75px">
-            </li>
-          </ul>
-      </nav>
-  </header>
-  <main>
+  <div id="auth-container" class="container">
+    <h2>Acceso a Contenido</h2>
+    <button id="toggle-auth">¿No tienes cuenta? Regístrate</button>
+    
+    <form id="form-login">
+      <h3>Iniciar Sesión</h3>
+      <input type="email" id="email-login" placeholder="Correo electrónico" required />
+      <input type="password" id="password-login" placeholder="Contraseña" required />
+      <button type="submit">Iniciar Sesión</button>
+    </form>
+    
+    <form id="form-register" style="display: none;">
+      <h3>Registrarse</h3>
+      <input type="email" id="email-register" placeholder="Correo electrónico" required />
+      <input type="password" id="password-register" placeholder="Contraseña" required />
+      <button type="submit">Registrarse</button>
+    </form>
+    
+    <p id="error-message"></p>
+  </div>
 
-    <section class="piojo"></section>
+  <div id="locked-content" style="display: none;">
+    <h2>Proyectos en proceso (Vista Previa)</h2>
+    <button id="logout">Cerrar sesión</button>
+  </div>
 
-    <!-- Formulario de Inicio de Sesión -->
-    <div id="login-form" class="container">
-      <h2>Acceso a Contenido</h2>
-      <h3>Inicia sesión</h3>
-      <form id="form-login">
-        <input type="email" id="email" placeholder="Correo electrónico" required />
-        <div class="password-container">
-          <input type="password" id="password" placeholder="Contraseña" required />
-          <button type="button" class="toggle-password" id="toggle-password" style="height: 35px;">Mostrar</button>
-        </div>
-        <button type="submit">Iniciar Sesión</button>
-      </form>
-      <p id="error-message" style="color: red;"></p>
-    </div>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
-    <!-- Contenido bloqueado -->
-    <div id="locked-content" style="display: none;">
-      <h2>Proyectos en proceso (Vista Previa)</h2>
-      <div class="galeria">
-        <div class="imagen-item">
-            <h3>DevBit <span>NUEVO</span></h3>
-            <p>Creando con HTML, CSS, JS. Estamos creando el equipo!</p>
-            <a href="https://programmer-hugo.github.io/vista-previa/de/dev-bit/" class="view">Vista Previa</a>
-        </div>
-        <div class="imagen-item">
-            <h3>ASL Shop</h3>
-            <p>Creando con HTML, CSS, JS.</p>
-            <a href="https://programmer-hugo.github.io/vista-previa/de/asl-shop/" class="view">Vista Previa</a>
-        </div>
-          <div class="imagen-item">
-              <h3>Elias & Peña | Abogados</h3>
-              <p>Editando con HTML, CSS, JS.</p>
-              <a href="https://programmer-hugo.github.io/vista-previa/de/elias-y-pena-abogados/" class="view">Vista Previa</a>
-          </div>
-      </div>
-      <section class="logout">
-          <button class="floating-button" id="logout">Cerrar sesión</button>
-      </section>
-    </div>
+    const firebaseConfig = {
+      apiKey: "AIzaSyAGCRciTRz3aynKPve372cFtxe5E9qsATI",
+      authDomain: "dvsdhfvw.firebaseapp.com",
+      projectId: "dvsdhfvw",
+      storageBucket: "dvsdhfvw.firebasestorage.app",
+      messagingSenderId: "64899487218",
+      appId: "1:64899487218:web:7b6bcfab32b5d4a6d1076b",
+      measurementId: "G-H1CBF88HE6"
+    };
 
-    <script type="module">
-      // Importa Firebase
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-      import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
 
-      // Configuración de Firebase
-      const firebaseConfig = {
-        apiKey: "AIzaSyAGCRciTRz3aynKPve372cFtxe5E9qsATI",
-        authDomain: "dvsdhfvw.firebaseapp.com",
-        projectId: "dvsdhfvw",
-        storageBucket: "dvsdhfvw.firebasestorage.app",
-        messagingSenderId: "64899487218",
-        appId: "1:64899487218:web:7b6bcfab32b5d4a6d1076b",
-        measurementId: "G-H1CBF88HE6"
-      };
+    const loginForm = document.getElementById("form-login");
+    const registerForm = document.getElementById("form-register");
+    const toggleAuthButton = document.getElementById("toggle-auth");
+    const errorMessage = document.getElementById("error-message");
+    const lockedContent = document.getElementById("locked-content");
+    const authContainer = document.getElementById("auth-container");
+    const logoutButton = document.getElementById("logout");
 
-      // Inicializa Firebase
-      const app = initializeApp(firebaseConfig);
-      const auth = getAuth(app);
+    toggleAuthButton.addEventListener("click", () => {
+      if (loginForm.style.display === "none") {
+        loginForm.style.display = "block";
+        registerForm.style.display = "none";
+        toggleAuthButton.textContent = "¿No tienes cuenta? Regístrate";
+      } else {
+        loginForm.style.display = "none";
+        registerForm.style.display = "block";
+        toggleAuthButton.textContent = "¿Ya tienes cuenta? Inicia sesión";
+      }
+    });
 
-      // Referencias a elementos HTML
-      const loginForm = document.getElementById("form-login");
-      const emailInput = document.getElementById("email");
-      const passwordInput = document.getElementById("password");
-      const togglePasswordButton = document.getElementById("toggle-password");
-      const errorMessage = document.getElementById("error-message");
-      const lockedContent = document.getElementById("locked-content");
-      const loginFormDiv = document.getElementById("login-form");
-      const logoutButton = document.getElementById("logout");
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email-login").value;
+      const password = document.getElementById("password-login").value;
+      signInWithEmailAndPassword(auth, email, password)
+        .catch((error) => {
+          errorMessage.textContent = "Error: " + error.message;
+        });
+    });
 
-      // Alternar visibilidad de contraseña
-      togglePasswordButton.addEventListener("click", () => {
-        if (passwordInput.type === "password") {
-          passwordInput.type = "text";
-          togglePasswordButton.textContent = "Ocultar";
-        } else {
-          passwordInput.type = "password";
-          togglePasswordButton.textContent = "Mostrar";
-        }
-      });
+    registerForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email-register").value;
+      const password = document.getElementById("password-register").value;
+      createUserWithEmailAndPassword(auth, email, password)
+        .catch((error) => {
+          errorMessage.textContent = "Error: " + error.message;
+        });
+    });
 
-      // Maneja el formulario de inicio de sesión
-      loginForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-        const email = emailInput.value;
-        const password = passwordInput.value;
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        authContainer.style.display = "none";
+        lockedContent.style.display = "block";
+      } else {
+        authContainer.style.display = "block";
+        lockedContent.style.display = "none";
+      }
+    });
 
-        signInWithEmailAndPassword(auth, email, password)
-          .then(() => {
-            errorMessage.textContent = ""; // Limpia mensajes de error
-          })
-          .catch((error) => {
-            errorMessage.textContent = "Error: " + error.message;
-          });
-      });
-
-  // Detecta cambios en el estado de autenticación
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // Usuario autenticado
-          loginFormDiv.style.display = "none";
-          lockedContent.style.display = "block";
-        } else {
-          // Usuario no autenticado
-          loginFormDiv.style.display = "block";
-          lockedContent.style.display = "none";
-        }
-      });
-
-      // Maneja el cierre de sesión
-      logoutButton.addEventListener("click", () => {
-        signOut(auth);
-      });
-    </script>
-  </main>
+    logoutButton.addEventListener("click", () => {
+      signOut(auth);
+    });
+  </script>
 </body>
 </html>
